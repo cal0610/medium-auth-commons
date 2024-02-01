@@ -1,4 +1,4 @@
-name: Maven Package
+name: Publish Package
 
 on:
   push:
@@ -18,6 +18,6 @@ jobs:
         distribution: 'zulu'
 
     - name: Publish package
-      run: ./mvnw deploy -DskipTests
+      run: ./mvnw deploy -DskipTests -X
       env:
         GITHUB_TOKEN: ${{ github.token }}
